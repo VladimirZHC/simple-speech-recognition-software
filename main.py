@@ -33,23 +33,28 @@ try:
                 file = r'image_text.txt'
                 with open(file, 'a+') as f:
                     f.write(text)
+                    f.close()
             elif result == 'запиши секретный файл':
                 text = image_to_string(Image.open('images/watchit.png'))
                 file = r'image_text.txt'
                 with open(file, 'a+') as f:
                     f.write(text)
+                    f.close()
             elif result == 'запиши другой файл':
                 text = image_to_string(Image.open('images/code.png'))
                 file = r'image_text.txt'
                 with open(file, 'a+') as f:
                     f.write(text)
+                    f.close
             elif result == 'прочитай файл':
                 with open('image_text.txt', 'r') as n_f:
                     content = n_f.read()
                     print(content)
+                    f.close()
             elif result == 'очистить файл':
                 with open('image_text.txt', 'r+') as f:
-                    f.truncate(0)            
+                    f.truncate(0)
+                    f.close()           
 except sr.UnknownValueError:
     print('Голос был не распознан')
 except sr.RequestError:
